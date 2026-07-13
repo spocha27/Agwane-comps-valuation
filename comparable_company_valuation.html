@@ -1,0 +1,390 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<h2 class="sr-only">AGWANE Capital Comparable Company Valuation — comps analysis EV/EBITDA EV/Revenue football field chart for SADC markets</h2>
+<style>
+:root{--bg:#07091c;--s0:#0b1025;--s1:#101828;--s2:#182038;--bd:rgba(255,255,255,.07);--bs:rgba(255,255,255,.14);--ba:#c9a453;--tt:#dcd9d0;--t2:#7090b8;--tm:#3a4e6a;--ta:#c9a453;--ts:#1ec87a;--tw:#e8a020;--td:#e04040;--rr:7px;--mn:'JetBrains Mono',monospace;--ss:'Inter',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tt);font-family:var(--ss);font-size:13px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.hdr{display:flex;justify-content:space-between;align-items:flex-start;padding:14px 0 13px;border-bottom:1px solid var(--bd);margin-bottom:14px}
+.bmk{color:var(--ta);font-size:15px;margin-right:7px}.bsub{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--t2);font-weight:500}
+.dtl{font-size:17px;font-weight:300;color:var(--tt);margin:3px 0 0}.dsb{font-size:10.5px;color:var(--tm);font-family:var(--mn);margin-top:2px}
+.xrow{display:flex;gap:7px;align-items:center;flex-shrink:0;padding-top:2px}
+.xb{background:var(--s1);border:.5px solid var(--bs);border-radius:var(--rr);padding:5px 12px;cursor:pointer;font-size:12px;color:var(--tt);font-family:var(--ss);font-weight:500;transition:all .15s;white-space:nowrap}
+.xb:hover{background:var(--s2);border-color:var(--ba);color:var(--ta)}
+.xb.gold{background:rgba(201,164,83,.1);border:.5px solid rgba(201,164,83,.3);color:var(--ta)}.xb.gold:hover{background:rgba(201,164,83,.2)}
+.xb:disabled{opacity:.4;cursor:wait}
+.bdg{font-size:10px;font-family:var(--mn);padding:2px 9px;border-radius:3px;letter-spacing:.07em;font-weight:600;background:rgba(201,164,83,.1);color:var(--ta);border:.5px solid rgba(201,164,83,.22)}
+.kbar{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px}
+.kc{background:var(--s0);border:.5px solid var(--bd);border-radius:var(--rr);padding:11px 13px;transition:border-color .2s}.kc:hover{border-color:var(--bs)}.kc.gl{border-left:2px solid var(--ta)}.kc.rl{border-left:2px solid var(--td)}
+.kv{font-size:18px;font-weight:400;font-family:var(--mn);line-height:1.1;color:var(--tt)}.kv.g{color:var(--ts)}.kv.a{color:var(--ta)}.kv.r{color:var(--td)}
+.kl{font-size:10px;color:var(--tm);margin-top:4px;letter-spacing:.04em;font-family:var(--mn)}
+.tabs{display:flex;border-bottom:.5px solid var(--bd);margin-bottom:14px;overflow-x:auto}
+.tb{background:none;border:none;border-bottom:2px solid transparent;padding:8px 15px;cursor:pointer;font-size:12px;color:var(--t2);font-family:var(--ss);font-weight:500;white-space:nowrap;transition:all .15s}
+.tb:hover{color:var(--tt)}.tb.on{color:var(--tt);border-bottom-color:var(--ta)}
+.sl{font-size:10px;color:var(--tm);text-transform:uppercase;letter-spacing:.09em;font-family:var(--mn);font-weight:500;margin:0 0 9px}
+.ft{width:100%;border-collapse:collapse;font-size:12px}
+.ft th{text-align:right;padding:5px 9px;font-size:10.5px;color:var(--tm);font-weight:500;border-bottom:.5px solid var(--bs);font-family:var(--mn);white-space:nowrap}
+.ft th.l,.ft td.l{text-align:left}
+.ft td{text-align:right;padding:5px 9px;border-bottom:.5px solid var(--bd);font-family:var(--mn);font-size:11.5px;white-space:nowrap;color:var(--tt)}
+.ft td.l{color:var(--t2);font-family:var(--ss);font-size:12px}
+.ft tr.sub td{border-top:.5px solid var(--bs);font-weight:600;background:rgba(255,255,255,.02)}
+.ft tr.tgt td{background:rgba(201,164,83,.06);color:var(--ta);font-weight:500;border-top:1px solid rgba(201,164,83,.2)}
+.ft tr:hover td{background:rgba(255,255,255,.02)}
+.inp{background:var(--s1);border:.5px solid var(--bs);border-radius:5px;padding:3px 7px;color:var(--tt);font-size:11.5px;font-family:var(--mn);width:100%;transition:border-color .15s;text-align:right}
+.inp:focus{outline:none;border-color:var(--ba)}.inp.l{text-align:left;font-family:var(--ss);font-size:12px}
+.fl{display:flex;flex-direction:column;gap:2px;margin-bottom:8px}
+.fl label{font-size:10.5px;color:var(--t2)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.co{background:var(--s0);border:.5px solid var(--bd);border-radius:var(--rr);padding:13px}
+.co-hd{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ta);font-family:var(--mn);margin-bottom:10px}
+.ch{position:relative;height:210px;margin-top:14px}
+.pill{display:inline-block;font-size:10px;font-family:var(--mn);padding:1px 6px;border-radius:3px;font-weight:600}
+.pill.hi{background:rgba(30,200,122,.1);color:var(--ts)}.pill.lo{background:rgba(224,64,64,.1);color:var(--td)}.pill.fa{background:rgba(201,164,83,.1);color:var(--ta)}
+.aib{background:rgba(201,164,83,.09);border:.5px solid rgba(201,164,83,.28);border-radius:var(--rr);padding:8px 14px;cursor:pointer;font-size:12.5px;color:var(--ta);font-weight:500;font-family:var(--ss);width:100%;transition:all .15s}
+.aib:hover{background:rgba(201,164,83,.18)}.aib:disabled{opacity:.4;cursor:wait}
+.mob{background:var(--s0);border:.5px solid var(--bd);border-radius:var(--rr);padding:14px;font-size:12.5px;line-height:1.8;color:var(--t2);white-space:pre-wrap;font-family:var(--ss);display:none;margin-top:12px;min-height:120px}
+.qac{background:var(--s0);border:.5px solid var(--bd);border-radius:var(--rr);padding:12px 14px;margin-bottom:8px;font-size:12.5px;line-height:1.7;color:var(--t2)}
+.qaq{color:var(--ta);font-size:10px;font-family:var(--mn);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;font-weight:500}
+.qin{width:100%;background:var(--s1);border:.5px solid var(--bs);border-radius:var(--rr);padding:9px 11px;color:var(--tt);font-size:13px;font-family:var(--ss);resize:vertical;height:80px;line-height:1.5}
+.qin:focus{outline:none;border-color:var(--ba)}
+.qkb{background:var(--s1);border:.5px solid var(--bd);border-radius:5px;padding:5px 10px;cursor:pointer;font-size:11.5px;color:var(--t2);font-family:var(--ss);transition:all .15s}
+.qkb:hover{border-color:var(--ba);color:var(--ta)}
+.spin{display:inline-block;animation:sp .7s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+</style>
+
+<div style="padding:.75rem 0">
+<div class="hdr">
+  <div>
+    <div><span class="bmk">◆</span><span class="bsub">AGWANE CAPITAL · PE PORTFOLIO</span></div>
+    <div class="dtl">Comparable Company Valuation</div>
+    <div class="dsb" id="dsb">Loading comps…</div>
+  </div>
+  <div class="xrow">
+    <button class="xb" onclick="exportXL()">↓ Excel</button>
+    <button class="xb gold" id="wbtn" onclick="exportWD()">↓ Word</button>
+    <span class="bdg">COMPS</span>
+  </div>
+</div>
+
+<div class="kbar" id="kbar"></div>
+
+<nav class="tabs">
+  <button class="tb on" onclick="showTab('c',this)">Trading comps</button>
+  <button class="tb" onclick="showTab('v',this)">Valuation range</button>
+  <button class="tb" onclick="showTab('ai',this)">✦ AI analysis</button>
+</nav>
+
+<!-- COMPS TAB -->
+<div id="tc">
+  <div class="g2" style="margin-bottom:14px">
+    <div class="co">
+      <div class="co-hd">◆ Target company</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div><div class="fl"><label>Name</label><input class="inp l" id="t-nm" value="Kalahari Mfg Ltd" oninput="rc()"></div></div>
+        <div><div class="fl"><label>Current EV (BWP M)</label><input class="inp" id="t-cev" value="585" oninput="rc()"></div></div>
+        <div><div class="fl"><label>LTM Revenue (BWP M)</label><input class="inp" id="t-rv" value="450" oninput="rc()"></div></div>
+        <div><div class="fl"><label>LTM EBITDA (BWP M)</label><input class="inp" id="t-eb" value="90" oninput="rc()"></div></div>
+        <div><div class="fl"><label>LTM EBIT (BWP M)</label><input class="inp" id="t-ei" value="70" oninput="rc()"></div></div>
+        <div><div class="fl"><label>Net Income (BWP M)</label><input class="inp" id="t-ni" value="50" oninput="rc()"></div></div>
+      </div>
+    </div>
+    <div class="co">
+      <div class="co-hd">◎ Valuation quick view</div>
+      <div id="qv-panel" style="font-size:12px;line-height:2;color:var(--t2)">Calculating…</div>
+    </div>
+  </div>
+
+  <p class="sl">Comparable companies — edit any cell and multiples auto-update</p>
+  <div style="overflow-x:auto">
+    <table style="width:100%;border-collapse:collapse;font-size:12px" id="comp-input-tbl">
+      <thead>
+        <tr>
+          <th style="text-align:left;padding:5px 8px;font-size:10.5px;color:var(--tm);font-weight:500;border-bottom:.5px solid var(--bs);font-family:var(--mn);min-width:160px">Company</th>
+          <th style="text-align:right;padding:5px 8px;font-size:10.5px;color:var(--tm);font-weight:500;border-bottom:.5px solid var(--bs);font-family:var(--mn)">EV (M)</th>
+          <th style="text-align:right;padding:5px 8px;font-size:10.5px;color:var(--tm);font-weight:500;border-bottom:.5px solid var(--bs);font-family:var(--mn)">Revenue (M)</th>
+          <th style="text-align:right;padding:5px 8px;font-size:10.5px;color:var(--tm);font-weight:500;border-bottom:.5px solid var(--bs);font-family:var(--mn)">EBITDA (M)</th>
+          <th style="text-align:right;padding:5px 8px;font-size:10.5px;color:var(--tm);font-weight:500;border-bottom:.5px solid var(--bs);font-family:var(--mn)">EBIT (M)</th>
+          <th style="text-align:right;padding:5px 8px;font-size:10.5px;color:var(--ta);font-weight:600;border-bottom:.5px solid var(--bs);font-family:var(--mn)">EV/Rev</th>
+          <th style="text-align:right;padding:5px 8px;font-size:10.5px;color:var(--ta);font-weight:600;border-bottom:.5px solid var(--bs);font-family:var(--mn)">EV/EBITDA</th>
+          <th style="text-align:right;padding:5px 8px;font-size:10.5px;color:var(--ta);font-weight:600;border-bottom:.5px solid var(--bs);font-family:var(--mn)">EV/EBIT</th>
+        </tr>
+      </thead>
+      <tbody id="comp-tbody"></tbody>
+    </table>
+  </div>
+  <p class="sl" style="margin-top:14px">Multiple statistics</p>
+  <table class="ft" id="stats-tbl"></table>
+</div>
+
+<!-- VALUATION RANGE TAB -->
+<div id="tv" style="display:none">
+  <div class="g2">
+    <div>
+      <p class="sl">Implied enterprise value (BWP M)</p>
+      <table class="ft" id="implied-tbl"></table>
+      <div style="margin-top:14px" id="verdict-box"></div>
+    </div>
+    <div>
+      <p class="sl">Football field — implied EV range (BWP M)</p>
+      <div class="ch"><canvas id="ff-ch" role="img" aria-label="Horizontal football field chart showing implied EV ranges by EV/Revenue, EV/EBITDA, and EV/EBIT multiples with current EV marked"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<!-- AI TAB -->
+<div id="tai" style="display:none">
+  <div class="g2">
+    <div>
+      <p class="sl">Valuation opinion</p>
+      <p style="font-size:12.5px;color:var(--t2);margin:0 0 12px;line-height:1.6">Claude analyses the comps, assesses the current EV vs. peers, and gives a valuation verdict.</p>
+      <button class="aib" id="mbtn" onclick="genAnalysis()">✦ Generate valuation opinion</button>
+      <div id="mout" class="mob"></div>
+    </div>
+    <div>
+      <p class="sl">Ask Claude</p>
+      <textarea class="qin" id="qin" placeholder="e.g. Which comp is the most relevant benchmark?&#10;Is the current EV justified at this growth rate?&#10;What multiples do SADC industrials typically trade at?"></textarea>
+      <button class="aib" id="abtn" onclick="askC()" style="margin-top:8px">Ask Claude</button>
+      <div id="qaout" style="margin-top:12px;max-height:300px;overflow-y:auto"></div>
+    </div>
+  </div>
+  <div style="margin-top:16px;padding-top:13px;border-top:.5px solid var(--bd)">
+    <p class="sl" style="margin-bottom:8px">Quick prompts</p>
+    <div style="display:flex;flex-wrap:wrap;gap:7px">
+      <button class="qkb" onclick="qa('Is the current EV of the target rich or cheap vs. the comp set? Give a clear verdict.')">Rich or cheap?</button>
+      <button class="qkb" onclick="qa('Which comps are the most relevant benchmarks and why? Which should be excluded?')">Comp selection</button>
+      <button class="qkb" onclick="qa('What premium or discount should Kalahari Mfg trade at vs. peers, given its market position?')">Premium/discount</button>
+      <button class="qkb" onclick="qa('What multiple would a PE buyer likely pay vs. the public market comps median?')">PE vs public multiple</button>
+      <button class="qkb" onclick="qa('Summarise the valuation range in 2 sentences for an IC presentation.')">IC summary</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+const CH={},g=id=>document.getElementById(id),nv=id=>parseFloat(g(id)?.value)||0;
+const f=(v,d=1)=>(isNaN(v)||!isFinite(v))?'—':v.toFixed(d);
+const fx=v=>(isNaN(v)||!isFinite(v))?'—':v.toFixed(2)+'×';
+let ST={};
+const CV=[
+  {nm:'Sefalana Holdings',ev:1850,rv:2200,eb:165,ei:130},
+  {nm:'Choppies Enterprises',ev:680,rv:3800,eb:190,ei:145},
+  {nm:'Sechaba Breweries',ev:2100,rv:980,eb:245,ei:195},
+  {nm:'NAP Limited',ev:420,rv:380,eb:62,ei:48},
+  {nm:'RPC Industries (SA)',ev:3200,rv:2800,eb:420,ei:340},
+  {nm:'Afrocentric Group',ev:1680,rv:1950,eb:220,ei:175},
+  {nm:'Wilderness Holdings',ev:890,rv:560,eb:140,ei:108},
+  {nm:'CA Sales Holdings',ev:1240,rv:1450,eb:195,ei:155}
+];
+const C={tx:'#7090b8',gr:'#141e3a',b:'#2a78d6',g:'#1ec87a',a:'#c9a453',r:'#e04040',v:'#4a3aa7'};
+function kc(id){if(CH[id]){CH[id].destroy();delete CH[id];}}
+
+function pct(arr,p){
+  const s=[...arr].sort((a,b)=>a-b);
+  if(s.length===0)return 0;
+  const i=(p/100)*(s.length-1),lo=Math.floor(i),hi=Math.ceil(i);
+  return s[lo]+(s[hi]-s[lo])*(i-lo);
+}
+function stats(arr){
+  const v=arr.filter(x=>x>0&&isFinite(x)&&!isNaN(x));
+  if(!v.length)return{min:0,p25:0,med:0,p75:0,max:0,mean:0,n:0};
+  return{min:Math.min(...v),p25:pct(v,25),med:pct(v,50),p75:pct(v,75),max:Math.max(...v),mean:v.reduce((s,x)=>s+x,0)/v.length,n:v.length};
+}
+
+function initComps(){
+  const tb=g('comp-tbody');
+  tb.innerHTML=CV.map((_,i)=>`<tr id="crow-${i}" style="border-bottom:.5px solid var(--bd)">`+
+    `<td style="padding:4px 8px"><input class="inp l" id="c${i}-nm" value="${CV[i].nm}" oninput="rc()" style="width:148px"></td>`+
+    `<td style="padding:4px 8px"><input class="inp" id="c${i}-ev" value="${CV[i].ev}" oninput="rc()" style="width:72px"></td>`+
+    `<td style="padding:4px 8px"><input class="inp" id="c${i}-rv" value="${CV[i].rv}" oninput="rc()" style="width:72px"></td>`+
+    `<td style="padding:4px 8px"><input class="inp" id="c${i}-eb" value="${CV[i].eb}" oninput="rc()" style="width:72px"></td>`+
+    `<td style="padding:4px 8px"><input class="inp" id="c${i}-ei" value="${CV[i].ei}" oninput="rc()" style="width:72px"></td>`+
+    `<td style="padding:4px 8px;font-family:var(--mn);font-size:12px;text-align:right;color:var(--tt)" id="c${i}-evr">—</td>`+
+    `<td style="padding:4px 8px;font-family:var(--mn);font-size:12px;text-align:right;color:var(--tt)" id="c${i}-eveb">—</td>`+
+    `<td style="padding:4px 8px;font-family:var(--mn);font-size:12px;text-align:right;color:var(--tt)" id="c${i}-evei">—</td>`+
+    `</tr>`).join('');
+}
+
+function rc(){
+  const tNm=g('t-nm').value,tCev=nv('t-cev'),tRv=nv('t-rv'),tEb=nv('t-eb'),tEi=nv('t-ei'),tNi=nv('t-ni');
+  const comps=CV.map((_,i)=>({nm:g(`c${i}-nm`)?.value||'',ev:nv(`c${i}-ev`),rv:nv(`c${i}-rv`),eb:nv(`c${i}-eb`),ei:nv(`c${i}-ei`)}));
+  
+  // Compute multiples and update cells
+  const evRevM=[],evEbM=[],evEiM=[];
+  comps.forEach((c,i)=>{
+    const evr=c.rv>0?c.ev/c.rv:NaN,eveb=c.eb>0?c.ev/c.eb:NaN,evei=c.ei>0?c.ev/c.ei:NaN;
+    if(g(`c${i}-evr`))g(`c${i}-evr`).textContent=isFinite(evr)?evr.toFixed(2)+'×':'—';
+    if(g(`c${i}-eveb`))g(`c${i}-eveb`).textContent=isFinite(eveb)?eveb.toFixed(2)+'×':'—';
+    if(g(`c${i}-evei`))g(`c${i}-evei`).textContent=isFinite(evei)?evei.toFixed(2)+'×':'—';
+    if(isFinite(evr)&&evr>0)evRevM.push(evr);
+    if(isFinite(eveb)&&eveb>0)evEbM.push(eveb);
+    if(isFinite(evei)&&evei>0)evEiM.push(evei);
+  });
+
+  const sR=stats(evRevM),sE=stats(evEbM),sI=stats(evEiM);
+  const implRev={min:sR.min*tRv,p25:sR.p25*tRv,med:sR.med*tRv,p75:sR.p75*tRv,max:sR.max*tRv};
+  const implEb={min:sE.min*tEb,p25:sE.p25*tEb,med:sE.med*tEb,p75:sE.p75*tEb,max:sE.max*tEb};
+  const implEi={min:sI.min*tEi,p25:sI.p25*tEi,med:sI.med*tEi,p75:sI.p75*tEi,max:sI.max*tEi};
+
+  ST={tNm,tCev,tRv,tEb,tEi,tNi,comps,sR,sE,sI,implRev,implEb,implEi};
+
+  const vsMedian=(implEb.med>0&&tCev>0)?((tCev-implEb.med)/implEb.med):0;
+  g('dsb').textContent=`${tNm}  ·  EV/EBITDA median ${fx(sE.med)}  ·  Implied EV BWP ${f(implEb.med,0)}M vs current BWP ${f(tCev,0)}M  ·  ${vsMedian>=0?'↑ Premium':'↓ Discount'} ${Math.abs(vsMedian*100).toFixed(1)}%`;
+
+  g('kbar').innerHTML=[
+    {l:'EV/Rev median',v:fx(sR.med),c:''},
+    {l:'EV/EBITDA median',v:fx(sE.med),c:''},
+    {l:'EV/EBIT median',v:fx(sI.med),c:''},
+    {l:'Implied EV (EBITDA)',v:`BWP ${f(implEb.med,0)}M`,c:'gl'},
+    {l:'vs. Current EV',v:(vsMedian>=0?'+':'')+f(vsMedian*100,1)+'%',c:vsMedian>=0?'gl':'rl'}
+  ].map(k=>`<div class="kc ${k.c.includes('gl')?'gl':k.c.includes('rl')?'rl':''}"><div class="kv ${k.c.includes('gl')?'a':k.c.includes('rl')?'r':''}">${k.v}</div><div class="kl">${k.l}</div></div>`).join('');
+
+  // Stats table
+  const stb=g('stats-tbl');
+  if(stb){
+    stb.innerHTML=`<thead><tr><th class="l">Statistic</th><th>EV / Revenue</th><th>EV / EBITDA</th><th>EV / EBIT</th></tr></thead><tbody>`+
+    [['Min',s=>fx(s.min)],['25th percentile',s=>fx(s.p25)],['Median',s=>fx(s.med)],['Mean',s=>fx(s.mean)],['75th percentile',s=>fx(s.p75)],['Max',s=>fx(s.max)],['# comps',s=>s.n]]
+    .map(([l,fn],ri)=>`<tr${ri===2||ri===5?' class="sub"':''}><td class="l">${l}</td><td>${fn(sR)}</td><td>${fn(sE)}</td><td>${fn(sI)}</td></tr>`).join('')+'</tbody>';
+  }
+
+  // Quick view
+  g('qv-panel').innerHTML=[
+    [`EV/Revenue range`,`${fx(sR.p25)} – ${fx(sR.p75)}`],
+    [`EV/EBITDA range`,`${fx(sE.p25)} – ${fx(sE.p75)}`],
+    [`Implied EV (EBITDA)`,`BWP ${f(implEb.p25,0)}M – BWP ${f(implEb.p75,0)}M`],
+    [`Current EV`,`BWP ${f(tCev,0)}M`],
+    [`vs. EBITDA median`,`${vsMedian>=0?'+':''}${f(vsMedian*100,1)}% ${vsMedian>=0?'<span class="pill hi">PREMIUM</span>':'<span class="pill lo">DISCOUNT</span>'}`]
+  ].map(([l,v])=>`<div style="display:flex;justify-content:space-between;border-bottom:.5px solid var(--bd);padding:4px 0"><span style="color:var(--t2);font-size:11.5px">${l}</span><span style="font-family:var(--mn);font-size:12px">${v}</span></div>`).join('');
+
+  // Implied valuation table
+  const itb=g('implied-tbl');
+  if(itb){
+    const rows=[['EV/Revenue',implRev],['EV/EBITDA',implEb],['EV/EBIT',implEi]];
+    itb.innerHTML=`<thead><tr><th class="l">Method</th><th>Min</th><th>25th</th><th>Median</th><th>75th</th><th>Max</th><th>vs. Current</th></tr></thead><tbody>`+
+    rows.map(([l,im])=>{const vs=tCev>0&&im.med>0?(tCev-im.med)/im.med:NaN;
+      return`<tr><td class="l">${l}</td><td>${f(im.min,0)}</td><td>${f(im.p25,0)}</td><td style="color:var(--ta);font-weight:500">${f(im.med,0)}</td><td>${f(im.p75,0)}</td><td>${f(im.max,0)}</td><td><span class="pill ${vs>=0?'hi':isNaN(vs)?'fa':'lo'}">${isNaN(vs)?'—':(vs>=0?'+':'')+f(vs*100,1)+'%'}</span></td></tr>`;
+    }).join('')+`<tr class="tgt"><td class="l">${tNm} — Current EV</td><td colspan="5" style="text-align:center">BWP ${f(tCev,0)}M</td><td>—</td></tr></tbody>`;
+  }
+
+  // Verdict box
+  const vb=g('verdict-box');
+  if(vb){
+    const low=Math.min(implRev.p25,implEb.p25,implEi.p25),high=Math.max(implRev.p75,implEb.p75,implEi.p75);
+    vb.innerHTML=`<div style="background:var(--s0);border:.5px solid ${vsMedian>=0?'rgba(201,164,83,.3)':'rgba(224,64,64,.3)'};border-left:2px solid ${vsMedian>=0?'var(--ta)':'var(--td)'};border-radius:var(--rr);padding:12px 14px"><p class="sl" style="margin-bottom:7px">Valuation verdict</p><p style="font-size:12.5px;color:var(--t2);line-height:1.7"><strong style="color:var(--tt)">${tNm}</strong> trades at a current EV of <strong style="color:var(--ta)">BWP ${f(tCev,0)}M</strong>. The blended valuation range (25th–75th percentile) spans <strong style="color:var(--tt)">BWP ${f(low,0)}M – BWP ${f(high,0)}M</strong>. Vs. the median EV/EBITDA multiple, the target is <strong style="color:${vsMedian>=0?'var(--ta)':'var(--ts)'}"> ${Math.abs(vsMedian*100).toFixed(1)}% ${vsMedian>=0?'above median (trading at premium)':'below median (potential upside)'}.</strong></p></div>`;
+  }
+
+  // Football field chart
+  kc('ff-ch');const ffe=g('ff-ch');
+  if(ffe){
+    const labels=['EV / Revenue','EV / EBITDA','EV / EBIT'];
+    const p25s=[implRev.p25,implEb.p25,implEi.p25];
+    const p75s=[implRev.p75,implEb.p75,implEi.p75];
+    const meds=[implRev.med,implEb.med,implEi.med];
+    const mins=[implRev.min,implEb.min,implEi.min];
+    const maxs=[implRev.max,implEb.max,implEi.max];
+    CH['ff-ch']=new Chart(ffe,{type:'bar',data:{labels,datasets:[
+      {label:'Min–25th',data:p25s.map((p,i)=>[mins[i],p]),backgroundColor:'rgba(112,144,184,.12)',borderWidth:0,borderRadius:2,barThickness:22},
+      {label:'IQR (25th–75th)',data:p25s.map((p,i)=>[p,p75s[i]]),backgroundColor:C.a+'55',borderColor:C.a,borderWidth:1.5,borderRadius:2,barThickness:22},
+      {label:'75th–Max',data:p75s.map((p,i)=>[p,maxs[i]]),backgroundColor:'rgba(112,144,184,.12)',borderWidth:0,borderRadius:2,barThickness:22},
+      {label:'Median',data:meds.map(m=>[m-.5,m+.5]),backgroundColor:C.a,borderWidth:0,barThickness:22},
+      {label:`Current EV (BWP ${f(tCev,0)}M)`,data:labels.map(()=>[tCev-.5,tCev+.5]),backgroundColor:C.g,borderWidth:0,barThickness:22}
+    ]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'bottom',labels:{font:{size:11},color:C.tx,boxWidth:10,boxHeight:10,padding:12}}},scales:{x:{grid:{color:C.gr},ticks:{color:C.tx,font:{size:11},callback:v=>`${v}M`}},y:{grid:{display:false},ticks:{color:C.tx,font:{size:11}}}}}});
+  }
+}
+
+function showTab(id,btn){
+  ['c','v','ai'].forEach(t=>{const e=g(`t${t}`);if(e)e.style.display=t===id?'':'none';});
+  document.querySelectorAll('.tb').forEach(b=>b.classList.remove('on'));
+  if(btn)btn.classList.add('on');
+}
+
+function compCtx(){const s=ST;return `TARGET: ${s.tNm} | Current EV: BWP ${f(s.tCev,0)}M | Rev: BWP ${f(s.tRv,0)}M | EBITDA: BWP ${f(s.tEb,0)}M | EBIT: BWP ${f(s.tEi,0)}M\nCOMPS (${s.comps.filter(c=>c.ev>0).length} companies) | EV/Rev: ${f(s.sR.min,2)}×–${f(s.sR.max,2)}× (median ${f(s.sR.med,2)}×) | EV/EBITDA: ${f(s.sE.min,2)}×–${f(s.sE.max,2)}× (median ${f(s.sE.med,2)}×) | EV/EBIT: ${f(s.sI.min,2)}×–${f(s.sI.max,2)}× (median ${f(s.sI.med,2)}×)\nIMPLIED EV RANGE: EV/EBITDA ${f(s.implEb.p25,0)}–${f(s.implEb.p75,0)} (median ${f(s.implEb.med,0)}M) | Current EV ${s.implEb.med>0?((s.tCev-s.implEb.med)/s.implEb.med*100).toFixed(1)+'% vs median':'—'}`;}
+
+async function apiCall(p){
+  const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1000,messages:[{role:'user',content:p}]})});
+  const d=await r.json();return d.content?.[0]?.text||'Error.';
+}
+async function genAnalysis(){
+  const btn=g('mbtn'),out=g('mout');btn.disabled=true;btn.innerHTML='<span class="spin">⟳</span> Analysing…';out.style.display='none';
+  const p=`PE analyst at AGWANE Capital. Provide a comps valuation opinion.\n\n${compCtx()}\n\nStructure your response as:\n\nCOMPS QUALITY ASSESSMENT\nVALUATION RANGE ANALYSIS\nPREMIUM / DISCOUNT RATIONALE\nVALUATION VERDICT\n\n4 sections, ~100 words each. Professional. Reference SADC market context. No preamble.`;
+  try{out.textContent=await apiCall(p);}catch(e){out.textContent='Error connecting to Claude.';}
+  out.style.display='block';btn.disabled=false;btn.innerHTML='✦ Regenerate opinion';
+}
+async function askC(){
+  const btn=g('abtn'),qIn=g('qin'),out=g('qaout');
+  const q=qIn.value.trim();if(!q)return;
+  btn.disabled=true;btn.innerHTML='<span class="spin">⟳</span>';
+  try{
+    const ans=await apiCall(`PE analyst at AGWANE Capital. Comps context: ${compCtx()}. Answer in 3-4 sentences with specific numbers.\n\nQ: ${q}`);
+    const c=document.createElement('div');c.className='qac';c.innerHTML=`<div class="qaq">${q}</div>${ans}`;
+    out.prepend(c);qIn.value='';
+  }catch(e){const c=document.createElement('div');c.className='qac';c.textContent='Error.';out.prepend(c);}
+  btn.disabled=false;btn.innerHTML='Ask Claude';
+}
+function qa(q){g('qin').value=q;askC();}
+
+function exportXL(){
+  const s=ST;if(!s.tNm)return;
+  const wb=XLSX.utils.book_new();
+  const comp_rows=[['COMPARABLE COMPANY ANALYSIS — AGWANE CAPITAL'],[''],['Company','EV (M)','Revenue (M)','EBITDA (M)','EBIT (M)','EV/Revenue','EV/EBITDA','EV/EBIT'],...s.comps.map(c=>[c.nm,c.ev,c.rv,c.eb,c.ei,c.rv>0?+(c.ev/c.rv).toFixed(2):'N/A',c.eb>0?+(c.ev/c.eb).toFixed(2):'N/A',c.ei>0?+(c.ev/c.ei).toFixed(2):'N/A']),[''],['Statistics','','','','','','',''],['Min','','','','',f(s.sR.min,2)+'x',f(s.sE.min,2)+'x',f(s.sI.min,2)+'x'],['Median','','','','',f(s.sR.med,2)+'x',f(s.sE.med,2)+'x',f(s.sI.med,2)+'x'],['Max','','','','',f(s.sR.max,2)+'x',f(s.sE.max,2)+'x',f(s.sI.max,2)+'x'],[''],['TARGET: '+s.tNm,'','','Current EV',s.tCev,'','',''],['Implied EV — Min','','','',f(s.implEb.min,0),'','',''],['Implied EV — Median','','','',f(s.implEb.med,0),'','',''],['Implied EV — Max','','','',f(s.implEb.max,0),'','','']];
+  XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(comp_rows),'Comps Analysis');
+  XLSX.writeFile(wb,`${s.tNm.replace(/\s+/g,'_')}_Comps_AGWANE.xlsx`);
+}
+
+async function exportWD(){
+  const s=ST;if(!s.tNm)return;
+  const btn=g('wbtn');btn.disabled=true;btn.textContent='Generating…';
+  const xe=t=>String(t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const NAV='1B3A5C',GOL='B8882E',WHI='FFFFFF',GRY='EEF2F8',ALT='F8F9FC';
+  const P=(text,{b=false,sz=22,col='333333',after=80,center=false}={})=>
+    `<w:p><w:pPr><w:jc w:val="${center?'center':'left'}"/><w:spacing w:after="${after}"/></w:pPr><w:r><w:rPr>${b?'<w:b/>':''}<w:sz w:val="${sz}"/><w:szCs w:val="${sz}"/><w:color w:val="${col}"/></w:rPr><w:t xml:space="preserve">${xe(text)}</w:t></w:r></w:p>`;
+  const PB=()=>`<w:p><w:r><w:br w:type="page"/></w:r></w:p>`;
+  const TC=(text,{w=2268,b=false,bg='',col='333333',right=false,sz=18}={})=>
+    `<w:tc><w:tcPr><w:tcW w:w="${w}" w:type="dxa"/>${bg?`<w:shd w:val="clear" w:color="auto" w:fill="${bg}"/>`:''}
+</w:tcPr><w:p><w:pPr><w:jc w:val="${right?'right':'left'}"/><w:spacing w:after="0"/></w:pPr><w:r><w:rPr>${b?'<w:b/>':''}<w:sz w:val="${sz}"/><w:szCs w:val="${sz}"/><w:color w:val="${col}"/></w:rPr><w:t xml:space="preserve">${xe(text)}</w:t></w:r></w:p></w:tc>`;
+  const TR=c=>`<w:tr>${c}</w:tr>`;
+  const TBL=(rows,tw=10080)=>`<w:tbl><w:tblPr><w:tblW w:w="${tw}" w:type="dxa"/><w:tblBorders><w:top w:val="single" w:sz="4" w:space="0" w:color="CCCCCC"/><w:left w:val="single" w:sz="4" w:space="0" w:color="CCCCCC"/><w:bottom w:val="single" w:sz="4" w:space="0" w:color="CCCCCC"/><w:right w:val="single" w:sz="4" w:space="0" w:color="CCCCCC"/><w:insideH w:val="single" w:sz="4" w:space="0" w:color="CCCCCC"/><w:insideV w:val="single" w:sz="4" w:space="0" w:color="CCCCCC"/></w:tblBorders></w:tblPr>${rows}</w:tbl>`;
+  let body='';
+  body+=P('◆  AGWANE CAPITAL',{b:true,sz:28,col:NAV,center:true,after:30});
+  body+=P('COMPARABLE COMPANY VALUATION',{b:true,sz:36,col:NAV,center:true,after:30});
+  body+=P(xe(s.tNm.toUpperCase()),{b:true,sz:28,col:GOL,center:true,after:30});
+  body+=P(`Current EV: BWP ${f(s.tCev,0)}M  ·  ${new Date().toLocaleDateString('en-GB',{month:'long',year:'numeric'})}`,{sz:18,col:'888888',center:true,after:0});
+  body+=PB();
+  body+=P('1.  COMPARABLE COMPANIES',{b:true,sz:26,col:NAV,after:100});
+  const hw=[1800,1080,1080,1080,1080,1080,1080,1080];
+  body+=TBL(TR(['Company','EV (M)','Rev (M)','EBITDA (M)','EBIT (M)','EV/Rev','EV/EBITDA','EV/EBIT'].map((h,i)=>TC(h,{w:hw[i],b:true,bg:NAV,col:WHI,sz:15,right:i>0})).join(''))+s.comps.filter(c=>c.ev>0).map((c,i)=>TR([c.nm,f(c.ev,0),f(c.rv,0),f(c.eb,0),f(c.ei,0),c.rv>0?f(c.ev/c.rv,2)+'×':'—',c.eb>0?f(c.ev/c.eb,2)+'×':'—',c.ei>0?f(c.ev/c.ei,2)+'×':'—'].map((v,ci)=>TC(v,{w:hw[ci],bg:i%2===0?GRY:ALT,sz:15,right:ci>0})).join(''))).join(''));
+  body+=P(' ',{sz:8,after:80});
+  body+=P('2.  MULTIPLE STATISTICS & IMPLIED VALUATION',{b:true,sz:26,col:NAV,after:100});
+  const sw=[3000,1554,1554,1554,1554,1554];
+  body+=TBL(TR(['Statistic','EV/Revenue','EV/EBITDA','EV/EBIT','Implied EV (EBITDA)','vs. Current EV'].map((h,i)=>TC(h,{w:sw[i],b:true,bg:NAV,col:WHI,sz:15,right:i>0})).join(''))+[
+    ['Min',f(s.sR.min,2)+'×',f(s.sE.min,2)+'×',f(s.sI.min,2)+'×',f(s.implEb.min,0),''],
+    ['25th Percentile',f(s.sR.p25,2)+'×',f(s.sE.p25,2)+'×',f(s.sI.p25,2)+'×',f(s.implEb.p25,0),''],
+    ['Median',f(s.sR.med,2)+'×',f(s.sE.med,2)+'×',f(s.sI.med,2)+'×',f(s.implEb.med,0),s.implEb.med>0?((s.tCev-s.implEb.med)/s.implEb.med*100).toFixed(1)+'%':''],
+    ['75th Percentile',f(s.sR.p75,2)+'×',f(s.sE.p75,2)+'×',f(s.sI.p75,2)+'×',f(s.implEb.p75,0),''],
+    ['Max',f(s.sR.max,2)+'×',f(s.sE.max,2)+'×',f(s.sI.max,2)+'×',f(s.implEb.max,0),''],
+    [xe(s.tNm)+' — Current EV','','','','BWP '+f(s.tCev,0)+'M','Reference']
+  ].map(([...vals],ri)=>TR(vals.map((v,ci)=>TC(v,{w:sw[ci],b:ri===5,bg:ri===5?'D8E4F0':ri===2?'E8F0D8':ri%2===0?GRY:ALT,sz:15,right:ci>0,col:ri===5?NAV:ri===2?'1A7A4A':'333333'})).join(''))).join(''));
+  body+=P(' ',{after:40});
+  body+=P(`AGWANE Capital Inc.  ·  Confidential  ·  ${new Date().toLocaleDateString()}`,{sz:16,col:'AAAAAA',center:true,after:0});
+  const docXML=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>${body}<w:sectPr><w:pgSz w:w="12240" w:h="15840"/><w:pgMar w:top="1080" w:right="1080" w:bottom="1080" w:left="1080" w:header="720" w:footer="720"/></w:sectPr></w:body></w:document>`;
+  const ct=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/><Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/><Override PartName="/word/settings.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.settings+xml"/></Types>`;
+  const rr=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>`;
+  const dr=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings" Target="settings.xml"/></Relationships>`;
+  const st=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/><w:sz w:val="22"/><w:szCs w:val="22"/></w:rPr></w:rPrDefault></w:docDefaults><w:style w:type="paragraph" w:styleId="Normal"><w:name w:val="Normal"/></w:style></w:styles>`;
+  const se=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:settings xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:defaultTabStop w:val="720"/></w:settings>`;
+  try{
+    const zip=new JSZip();zip.file('[Content_Types].xml',ct);zip.folder('_rels').file('.rels',rr);
+    const word=zip.folder('word');word.file('document.xml',docXML);word.file('styles.xml',st);word.file('settings.xml',se);
+    word.folder('_rels').file('document.xml.rels',dr);
+    const blob=await zip.generateAsync({type:'blob'});
+    const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;
+    a.download=`${s.tNm.replace(/\s+/g,'_')}_Comps_AGWANE.docx`;document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
+  }catch(e){alert('Word export error: '+e.message);}
+  btn.disabled=false;btn.innerHTML='↓ Word';
+}
+
+initComps();rc();
+</script>
